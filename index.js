@@ -9,6 +9,7 @@ const pfserver=express()
 pfserver.use(cors())
 pfserver.use(express.json())
 pfserver.use(router)
+pfserver.use('/uploads',express.static('./uploads'))
 require('./DB/connection')
 const PORT= 3000 || process.env.PORT
 pfserver.listen(PORT,()=>{
